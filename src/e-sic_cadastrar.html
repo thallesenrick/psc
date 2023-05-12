@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="../../../../dist/output.css">
+    <link rel="stylesheet" href="../../../../dist/style.css">
+    <link rel="stylesheet" href="../../../../src/resources/default_css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../../../fontawesome-pro-6.1.1-web/css/all.min.css">
+    <style>
+        input.larger {
+            height: 80px;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <!--beggin: Header-->
+    <div>
+        <header class="absolute z-10 bg-black bg-opacity-30 text-white w-full text-xs uppercase">
+            <div class="flex flex-row flex-wrap justify-center lg:justify-between py-3 tamanhos">
+                <ul class="flex flex-wrap justify-center">
+                    <li class="pr-4 border-r">
+                        <a href="../../../pages/transparencia/lai/lai_opcoes.html" class="btn-header">
+                            <i class="fa-solid fa-circle-info mr-2"></i> Lei de acesso a informação
+                        </a>
+                    </li>
+                    <li class="px-4 border-r">
+                        <a href="../../../pages/mapa_do_site/mapa_do_site.html" class="btn-header">
+                            <i class="fa-duotone fa-sitemap mr-2"></i>Mapa do Site
+                        </a>
+                    </li>
+                    <li class="px-4 mt-4 md:mt-0 xl:mt-0 ">
+                        <a href="../../../pages/acessibilidade/acessibilidade.html" class="btn-header">
+                            <i class="fa-solid fa-hand-holding-hand mr-2"></i> Acessibilidade
+                        </a>
+                    </li>
+                </ul>
+                <ul class="flex flex-wrap nav mt-4 lg:mt-0 space-x-6 mx-auto lg:mx-28  xl:mx-0">
+                    <li>
+                        <a href="https://www.vlibras.gov.br/" target="_blank">
+                            <i class="far fa-hand-paper"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn-header">A</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" onclick="FontSize('decrease')" class="cursor-zoom-out">A-</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" onclick="FontSize('increase')" class="cursor-zoom-in">A+</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-adjust btn-header"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" id="area-adm" class="btn-header">ADMINISTRATIVO</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+     
+
+    </div>
+    <!--end: Banner-->
+    <!--beggin: Content-->
+  
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 ">
+        
+        <div class="relative">
+            <img class="w-full h-[550px] md:h-[500px] lg:h-full 3xl:h-full  object-cover object-center brightness-50" src="../../../img/banners/secretaria_banner.jpeg" alt="">
+            <p class="absolute top-[150px] xl:top-[240px] 2xl:top-[300px] text-white text-5xl ml-7 md:ml-14 xl:ml-20 2xl:ml-40 lg:mr-10 font-semibold">
+                LOGIN SOCIAL
+            </p>
+            <p class="absolute top-[200px] xl:top-[280px] 2xl:top-[350px] text-white text-lg mx-7  md:mx-14 lg:mr-20 xl:ml-20 2xl:ml-40 my-10">
+                Com este login você pode acompanhar protocolos, falar com parlamentares e acessar o e-SIC e 
+                a Ouvidoria para solicitar alguma informação ou registrar denúncias, reclamações ou sugestões.
+                    
+            </p>
+            <p class="absolute top-[380px] md:top-[300px] xl:top-[420px] 2xl:top-[480px] text-white text-lg mx-7  md:ml-14 lg:mr-20 xl:ml-20 2xl:ml-40 my-10">
+                Já possui um login?
+                <span class="text-white texto-negrito text-lg font-semibold hover:underline">
+                    <a href="e-sic_login.html">Acesse aqui.</a>
+                </span>
+            </p>
+
+
+        </div>
+
+        <div class="3xl:h-[1000px] lg:flex lg:items-center md:p-14 2xl:p-24">
+            <div class="flex-grow bg-white shadow-xl rounded-md p-8">
+                <div class="flex items-center gap-x-3">
+                    <p class="text-graylight">Dados Cadastrais</p>
+                    <button data-popover-target="popover-default" type="button">
+                        <i class="fa-duotone fa-circle-info text-sm text-secundary-900"></i>
+                    </button>
+                    <div data-popover id="popover-default" role="tooltip" class=" absolute z-20 invisible inline-block w-64 text-sm font-light text-graylight transition-opacity duration-300 bg-white border border-gray-100 rounded-lg shadow-xl opacity-0   ">
+                        <div class="w-60 p-4 ">
+                            <p>Os rótulos dos campos abaixo indicados com (*) são de preenchimento obrigatório</p>
+                        </div>
+                        <div data-popper-arrow></div>
+                    </div>
+                </div>
+                <p class="w-40 h-1 mt-6 bg-secundary-900"></p>
+                <form class=" w-full mt-8">
+                    <div class="relative z-0 w-full mb-6 group mt-5 col-span-2">
+                        <input type="text" class="block py-2.5 w-full text-sm text-graylight bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secundary-900 peer" placeholder=" " required />
+                        <label class="peer-focus:font-medium absolute text-base text-graylight duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secundary-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Nome completo (*)</label>
+                    </div>  
+                    <div class="relative z-0 w-full mb-6 group mt-5 col-span-2">
+                        <input type="text" class="block py-2.5 w-full text-sm text-graylight bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secundary-900 peer" placeholder=" " required />
+                        <label class="peer-focus:font-medium absolute text-base text-graylight duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secundary-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">CPF (*)</label>
+                    </div>                     
+                    <div class="form-group form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-brand-200 checked:border-brand-200 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"/>
+                          <label class="form-check-label inline-block text-graylight" for="exampleCheck2">Declaro não possuir CPF</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 md:mb-3 group col-span-2 md:col-span-1 mt-8">
+                        <label for="tipo_manifestação" class="block mb-2 text-sm font-medium text-graylight ">Tipo de identificacao (*)</label>
+                        <select id="tipo_manifestação" class=" border-b-2 border-r-0 border-l-0 border-t-0 border-gray-300 text-graylight text-base focus:ring-red-700 focus:border-secundary-900 block w-full p-2.5">
+                            <option>Selecione</option>
+                        </select>      
+                    </div>  
+                    <div class="relative z-0 w-full mb-6 group mt-5 col-span-2">
+                        <input type="text" class="block py-2.5 w-full text-sm text-graylight bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secundary-900 peer" placeholder=" " required />
+                        <label class="peer-focus:font-medium absolute text-base text-graylight duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secundary-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Número de identificação (*)</label>
+                    </div>  
+                    <div class="relative z-0 w-full md:mt-0 mb-5 md:mb-3 group col-span-2 md:col-span-1 mt-8">
+                        <label for="tipo_assunto" class="block mb-2 text-sm font-medium text-graylight ">Data de Nascimento</label>
+                        <input type="date" id="birthday" name="birthday" class="border-b-2 border-t-0 border-r-0 border-l-0 border-gray-300 text-graylight focus:ring-red-700 focus:border-secundary-900 w-full">
+                    </div> 
+                    <div class="relative z-0 w-full mb-6 group mt-5 col-span-2">
+                        <input type="text" class="block py-2.5 w-full text-sm text-graylight bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secundary-900 peer" placeholder=" " required />
+                        <label class="peer-focus:font-medium absolute text-base text-graylight duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secundary-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Telefone (DDD + número)</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group mt-5 col-span-2">
+                        <input type="text" class="block py-2.5 w-full text-sm text-graylight bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secundary-900 peer" placeholder=" " required />
+                        <label class="peer-focus:font-medium absolute text-base text-graylight duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secundary-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            E-mail (*)</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group mt-5 col-span-2">
+                        <input type="text" class="block py-2.5 w-full text-sm text-graylight bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secundary-900 peer" placeholder=" " required />
+                        <label class="peer-focus:font-medium absolute text-base text-graylight duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secundary-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Senha (*)</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group mt-5 col-span-2">
+                        <input type="text" class="block py-2.5 w-full text-sm text-graylight bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secundary-900 peer" placeholder=" " required />
+                        <label class="peer-focus:font-medium absolute text-base text-graylight duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-secundary-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Confirmar Senha (*)</label>
+                    </div>
+                    <div class="flex justify-end gap-x-5">
+                        <button type="submit" class="bg-secundary-900 w-full md:w-56 flex items-center py-2 justify-center mt-8  rounded-md effect-zoom text-white">Enviar</button>
+                        <button type="submit" class="bg-secundary-900 w-full md:w-56 flex items-center py-2 justify-center mt-8  rounded-md effect-zoom text-white">Cancelar</button>
+                    </div>
+                    
+                </form>
+                
+            </div>
+        </div>
+        
+    </div>
+        
+
+        
+
+
+       
+     
+    <!-- end:Pesquisa -->
+    <!--beggin: Mapa-->
+      <div class=" mx-auto">
+        <iframe class="w-full h-[300px] bg-cover 2xl:mx-auto"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4335.129674355573!2d-44.01678158472675!3d-19.995863586566912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6bdd3f022a3b7%3A0x12ac5aa6cae92561!2sR.%20da%20Tarde%20-%20Barreiro%2C%20Belo%20Horizonte%20-%20MG%2C%2030644-030!5e1!3m2!1sen!2sbr!4v1669989934249!5m2!1sen!2sbr"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <!--end: Mapa-->
+      
+    <!--end: Content-->
+    <!--beggin: Footer -->
+  
+    <footer class="text-graylight body-font">
+        <div class="py-20 flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col tamanhos">
+            <div class="flex-grow flex flex-wrap -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/4 md:w-1/2 w-full border-primary-400 lg:pr-16">
+                    <a class="flex title-font font-medium items-center md:justify-start justify-center text-graylight">
+                        <img src="https://intellgest-sigl-media.s3.amazonaws.com/media/sigg/public/appconfig/2/camaraquixere_ce.png" width="70">
+                    </a>
+                    <p class="mt-10 text-primary-900 font-bold mb-2">
+                        PREFEITURA MUNICIPAL DE MODELO
+                    </p>
+                    <div class="justify-center flex md:justify-start">
+                        <p class="w-10 h-1 bg-secundary-900"></p>
+                    </div>
+                    <p class="mt-5 text-sm">
+                        27ª Legislatura (2021 - 2024) (Atual)
+                    </p>
+                    <p class="mt-5 text-sm">
+                        PREFEITO(A)
+                    </p>
+                    <p class="text-sm mt-1">
+                        PAULA ROLIM
+                    </p>
+                    <h2 class="title-font text-primary-900 font-bold tracking-widest mb-2 mt-8">
+                        SOBRE NOS
+                    </h2>
+                    <div class="justify-center flex md:justify-start">
+                        <p class="w-10 h-1 bg-secundary-900"></p>
+                    </div>
+                    <div class="flex items-center text-primary-900 justify-center md:justify-start mt-8">
+                        <p class="text-sm">
+                            (85)
+                        </p>
+                        <p class="text-xl">
+                            3266-1144 
+                        </p>
+                    </div>
+                    <p class=" text-primary-900 text-sm">
+                        administracao@satuba.al.gov.br
+                    </p>
+                    <p class="mt-5 uppercase text-sm">
+                        Rua Amelia Pontes Satuba, Nº04
+                    </p>
+                    <p class="uppercase text-sm">
+                        CEP 57 120-000
+                    </p>
+                    <h2 class="title-font text-primary-900 font-bold tracking-widest mb-2 mt-8">
+                        HORÁRIO DE FUNCIONAMENTO
+                    </h2>
+                    <div class="justify-center flex md:justify-start">
+                        <p class="w-10 h-1 bg-secundary-900"></p>
+                    </div>
+                    <p class="text-sm mt-8 uppercase">
+                        Segunda à Sexta-feira 
+                    </p>
+                    <p class="text-sm mt-2">
+                        07:00h ÁS 13:00h 
+                    </p>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full  border-primary-400">
+                    <h2 class="title-font text-primary-900 font-bold tracking-widest mb-2">
+                        A PREFEITURA
+                    </h2>
+                    <div class="justify-center flex md:justify-start">
+                        <p class="w-10 h-1 bg-secundary-900"></p>
+                    </div>
+                    <nav class="list-none mt-8 mb-10 space-y-3 text-sm ">
+                        <li>
+                            <a class="text-graylight hover:text-primary-900">
+                                Prefeito e Vice Prefeito
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-graylight hover:text-primary-900">
+                                Galeria de ex-prefeitos
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-graylight hover:text-primary-900">
+                                Secretários
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-graylight hover:text-primary-900">
+                                Organograma
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-graylight hover:text-primary-900">
+                                Galeria
+                            </a>
+                        </li>
+                    </nav>
+                    <h2 class="title-font text-primary-900 font-bold tracking-widest text-sm mb-2">
+                        A CIDADE
+                    </h2>
+                    <div class="justify-center flex md:justify-start">
+                        <p class="w-10 h-1 bg-secundary-900"></p>
+                    </div>
+                    <nav class="list-none mb-10 space-y-3 text-sm mt-8">
+                        <li>
+                            <a class="text-graylight hover:text-primary-900">Informações Gerais</a>
+                        </li>
+                        <li>
+                            <a class="text-graylight hover:text-primary-900">História da Cidade</a>
+                        </li>
+                        <li>
+                            <a class="text-graylight hover:text-primary-900">Distritos</a>
+                        </li>
+                        <li>
+                            <a class="text-graylight hover:text-primary-900">Hino e Símbolos Oficiais</a>
+                        </li>
+                    </nav>
+                    <h2 class="title-font text-primary-900 font-bold tracking-widest mb-2">
+                        NOTICIAS
+                    </h2>
+                    <div class="justify-center flex md:justify-start">
+                        <p class="w-10 h-1 bg-secundary-900"></p>
+                    </div>
+                    <h2 class="title-font text-primary-900 font-bold tracking-widest mt-8 mb-2">
+                        FAQ
+                    </h2>
+                    <div class="justify-center flex md:justify-start">
+                        <p class="w-10 h-1 bg-secundary-900"></p>
+                    </div>
+                    <h2 class="title-font text-primary-900 font-bold tracking-widest mt-8 mb-2">
+                        OUVIDORIA
+                    </h2>
+                    <div class="justify-center flex md:justify-start">
+                        <p class="w-10 h-1 bg-secundary-900"></p>
+                    </div>
+                    <h2 class="title-font text-primary-900 font-bold tracking-widest mt-8 mb-2">
+                        TRANSPARÊNCIA
+                    </h2>
+                    <div class="justify-center flex md:justify-start">
+                        <p class="w-10 h-1 bg-secundary-900"></p>
+                    </div>
+                </div>
+            
+                <div class="lg:w-1/4 md:w-1/2 w-full">
+                
+                <h2 class="title-font text-primary-900 font-bold tracking-widest mb-2 mt-8 md:mt-0">
+                    LEGISLAÇÃO
+                </h2>
+                <div class="justify-center flex md:justify-start">
+                    <p class="w-10 h-1 bg-secundary-900"></p>
+                </div>
+                <h2 class="title-font text-primary-900 font-bold tracking-widest mt-8 mb-2">
+                    AGENDA MUNICIPAL
+                </h2>
+                <div class="justify-center flex md:justify-start">
+                    <p class="w-10 h-1 bg-secundary-900"></p>
+                </div>
+                <h2 class="title-font text-primary-900 font-bold tracking-widest mt-8 mb-2">
+                    SECRETARIAS
+                </h2>
+                <div class="justify-center flex md:justify-start">
+                    <p class="w-10 h-1 bg-secundary-900"></p>
+                </div>
+                <nav class="list-none mb-10 space-y-3 text-sm mt-8">
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Chefe de Gabinete
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Educação
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Turismo
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Controladoria Geral
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Procuradoria Geral
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Cultura
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Defesa Social
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Desenvolvimento
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Esporte e Lazer
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Obras e Urbanismo
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Saúde
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Produção Social
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Gestão e Planejamento
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Fazenda
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-graylight hover:text-primary-900">
+                            Meio Ambiente
+                        </a>
+                    </li>
+                </nav>
+                </div>
+        
+                <div class="lg:w-1/4 md:w-1/2 w-full border-primary-400">
+                    <h2 class="title-font text-primary-900 font-bold tracking-widest mb-2 mt-8 lg:mt-0">
+                        FALE CONOSCO
+                    </h2>
+                    <div class="justify-center flex md:justify-start">
+                        <p class="w-10 h-1 bg-secundary-900"></p>
+                    </div>
+                    <div class=" flex gap-x-1 justify-center md:justify-start mt-8">
+                        <button type="button" class=" botao-background3 w-12 h-12 ">
+                            <i class="fa-brands fa-facebook text-3xl "></i>
+                        </button> 
+                        <button type="button" class=" botao-background3   w-12 h-12">   
+                            <i class="fa-brands fa-youtube text-2xl  "></i>
+                        </button>
+                        <button type="button" class="botao-background3   w-12 h-12">
+                            <i class="fa-brands fa-instagram text-2xl "></i>
+                        </button>
+                        <button type="button" class=" botao-background3  w-12 h-12">
+                            <i class="fa fa-envelope text-2xl "></i>
+                        </button>
+                    </div>
+                    <p class="title-font text-primary-900 font-bold tracking-widest mt-8 mb-2">
+                        BAIXE NOSSO APP
+                        <div class="justify-center flex md:justify-start">
+                            <p class="w-10 h-1 bg-secundary-900"></p>
+                        </div>
+                    </p>
+                    <p class="mt-8 text-sm ">
+                        USE O QR CODE PARA FAZER O DOWNLOAD NA SUA LOJA DE APLICATIVOS
+                    </p>
+                    <img src="../../src/img/banners/qr-code.jpg" class="mt-5 mx-auto md:mx-0" alt="">   
+    
+                        <a href="#" class="w-full 2xl:w-2/3 mt-8 bg-primary-900 effect-zoom rounded-md text-white inline-flex items-center justify-center px-4 py-2.5">
+                            <i class="fa-brands fa-apple fa-2x mr-3"></i>                        
+                            <div class="text-left">
+                                <div class="mb-1 text-xs">
+                                    Faça o dowload
+                                </div>
+                                <div class="-mt-1 font-sans text-sm font-semibold">
+                                    Mac App Store
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="w-full 2xl:w-2/3 mt-2 bg-primary-900 effect-zoom rounded-md text-white inline-flex items-center justify-center px-4 py-2.5">
+                            <i class="fa-brands fa-google-play fa-2x mr-3"></i>                        
+                            <div class="text-left">
+                                <div class="mb-1 text-xs">
+                                    Faça o dowload
+                                </div>
+                                <div class="-mt-1 font-sans text-sm font-semibold">
+                                    Google Play
+                                </div>
+                            </div>
+                        </a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-primary-900">
+          <div class="tamanhos py-4 flex justify-between flex-wrap flex-col sm:flex-row">
+            <div>
+                <p class="text-white text-sm text-center sm:text-left mb-1">camaramodelo.intgest.com.br</p>
+                <p class="text-white font-black text-sm text-center sm:text-left">CNPJ 74.313.546/0001-39</p>
+            </div>
+            <div>
+                <p class="text-white text-sm text-center sm:text-right">© 2023 - <strong class="font-bold">IntGest</strong></p>
+                <p class="text-white text-sm text-center sm:text-left">Todos os direitos reservados</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    <!--end: Footer-->
+
+    <!-- beggin: Scripts -->
+        <script src="https://kit-pro.fontawesome.com/releases/v5.10.1/js/pro.min.js" data-auto-fetch-svg></script>
+        <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script>
+            // Owl Carousel
+            $(function() {
+            var owl = $(".owl-carousel");
+            owl.owlCarousel({
+                margin: 30,
+                autoplayTimeout: 6000,
+                autoplayHoverPause: true,
+                items: 1,
+                loop: true,
+                nav: false,
+                autoplay: true,
+                dots: false,
+                responsive: {
+                        0: {
+                            items: 1
+                        }
+                    }
+                });
+            });
+         //Javascript to toggle the menu
+         document.getElementById('nav-toggle').onclick = function(){
+                document.getElementById("nav-content").classList.toggle("hidden");
+            }
+        </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"
+                integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script>
+                const labels = [
+                    'Denúncias',
+                    'Reclamações',
+                    'Solicitações',
+                    'Sugestões',
+                    'Elogios'
+                ];
+                const data = {
+                    labels: labels,
+                    datasets: [{
+                        backgroundColor: [
+                            'rgba(225,0,16,0.5)',
+                            'rgba(225,0,16,0.3)',
+                            'rgba(30,153,51,0.8)',
+                            'rgba(30,153,51,0.5)',
+                            'rgba(30,153,51,0.3)',
+                        ],
+                        data: [87, 67, 32, 54, 58],
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'end',
+                            color: chart => {
+                                console.log(chart.dataIndex)
+                                console.log(chart.dataset.backgroundColor[chart.dataIndex])
+                                return chart.dataset.backgroundColor[chart.dataIndex]
+                            }
+                        }
+                    }]
+                };
+                const config = {
+                    type: 'bar',
+                    responsive: true,
+                    data: data,
+                    plugins: [ChartDataLabels],
+                    options: {
+                    maintainAspectRatio: false,
+                    layout: {
+                        
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false,
+                            },
+                        },
+                        y: {
+                            grid: {
+                                borderColor: 'transparent',
+        
+        
+                            },
+                            ticks: {
+                                maxTicksLimit: 3,
+                                font: {
+                                    size: 15,
+                                    weight: 'bold'
+                                }
+                            },
+                        },
+                    },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                enabled: false
+                            },
+                        },
+                    }
+                };
+        
+                const myChart = new Chart(
+                    document.getElementById('myChart'), config
+                );
+        
+                const containerBody = document.querySelector('.containerBody');
+                const totalLabels = myChart.data.labels.length;
+        
+                if(totalLabels > 3) {
+                    const newWidth = 800 + ((totalLabels - 3) * 10);
+                    containerBody.style.width = `${newWidth}px`;
+        
+                };
+            </script>
+     
+
+
+        
+    <!-- end: Scripts -->
+</body>
+</html>
